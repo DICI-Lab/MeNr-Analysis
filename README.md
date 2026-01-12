@@ -1,4 +1,4 @@
-# DraftMmE introduction
+# MeNr introduction
 
 The document describes the procedure to run the different analyses established in the manuscript XXXX. The organization of the document follows three distinctive chapters: (1) the softwares required to execute these analyses, (2) R Studio script analyses, and (3) PyMOL script analyses.
 
