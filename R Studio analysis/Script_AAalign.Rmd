@@ -1,0 +1,29 @@
+---
+title: "Script_AAstrgAlign"
+output: html_document
+date: "2025-07-30"
+------------
+#WEBLOGO/ALIGNMENT REPRESENTATION
+#In R Markdown page (Rmd file)
+
+```{r}
+library(msa)
+library(latexpdf)
+system.file('tex', 'texshade.sty', package='msa')
+```
+
+```{r}
+Protein <- read.csv("~/Desktop/XXXX_AlignSeqs.csv")
+VectorSIVseq <- Protein$Sequence
+names(PROTseq) <- Protein$Name
+myAAseqs <- AAStringSet(PROTseq)
+myAlignment <- msa(myAAseqs, "ClustalOmega")
+```  
+
+```{r}
+msaPrettyPrint(myAlignment, output = "pdf", subset=c(1:11), y=c(1,510), showNames = "left", showLogo = "top", logoColors = "rasmol", shadingMode = "similar", showLegend= FALSE, askForOverwrite = FALSE) #VAR#
+#Change the 'subset' according to number of sequences and 'y' according to the sequence length
+```
+
+#To generate the document clic on "Knit" (in the option bar)
+
